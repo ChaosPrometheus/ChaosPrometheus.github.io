@@ -35,28 +35,6 @@
     <div class="container">
         <h1>Добро пожаловать в Telegram WebApp</h1>
         <p>Это пример интеграции WebApp с Telegram.</p>
-        <button class="button" id="sendData">Отправить данные в Telegram</button>
     </div>
-
-    <script>
-        // Проверяем, доступен ли Telegram WebApp API
-        if (window.Telegram && Telegram.WebApp) {
-            const tg = Telegram.WebApp;
-
-            // Инициализация WebApp
-            tg.ready();
-
-            // Кнопка отправки данных в Telegram
-            document.getElementById('sendData').addEventListener('click', () => {
-                const data = { message: 'Привет от WebApp!' };
-
-                // Отправка данных в Telegram
-                tg.sendData(JSON.stringify(data));
-                tg.close(); // Закрываем WebApp
-            });
-        } else {
-            console.error('Telegram WebApp API недоступен.');
-        }
-    </script>
 </body>
 </html>
